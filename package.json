@@ -10,7 +10,10 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "visual-test": "npx storycap http://localhost:6006"
+    "visual-test:capture": "npx storycap http://localhost:6006 -o screenshots/current",
+    "visual-test" : "npm run visual-test:capture && npm run visual-test:assert",
+    "visual-test:assert": "reg-cli screenshots/current screenshots/expected screenshots/diff -R screenshots/report.html -J screenshots/report.json -E",
+    "visual-test:update": "npm run visual-test:assert -- -U"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +52,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "reg-cli": "^0.17.5",
     "storycap": "^3.1.5",
     "typescript": "~4.5.2"
   }
