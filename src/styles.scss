@@ -1,7 +1,23 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+section {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 48px 20px;
+  margin: 0 auto;
+  max-width: 800px;
+  color: #333;
+}
 
 section h2 {
   font-weight: 900;
@@ -16,19 +32,6 @@ section p {
   margin: 1em 0;
 }
 
-section a {
-  text-decoration: none;
-  color: #1ea7fd;
-}
-
-section ul {
-  padding-left: 30px;
-  margin: 1em 0;
-}
-
-section li {
-  margin-bottom: 8px;
-}
 
 section .tip {
   display: inline-block;
@@ -48,17 +51,4 @@ section .tip-wrapper {
   line-height: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
-}
-
-section .tip-wrapper svg {
-  display: inline-block;
-  height: 12px;
-  width: 12px;
-  margin-right: 4px;
-  vertical-align: top;
-  margin-top: 3px;
-}
-
-section .tip-wrapper svg path {
-  fill: #1ea7fd;
 }

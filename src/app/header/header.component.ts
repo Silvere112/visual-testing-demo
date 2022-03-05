@@ -24,7 +24,7 @@ import { AuthService } from "src/app/auth/auth.service";
               />
             </g>
           </svg>
-          <h1>Visual Testing Demo</h1>
+          <h1>Visual Testing Demonstration</h1>
         </div>
         <div>
           <div *ngIf="username">
