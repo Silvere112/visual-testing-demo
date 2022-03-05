@@ -19,17 +19,17 @@ const Template: Story<FormComponent> = (args: FormComponent) => ({
   props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
-  placeHolder: "placeHolder",
-  actionLabel: "actionLabel",
-  color: "primary"
+export const Role = Template.bind({});
+Role.args = {
+  placeHolder: "Role",
+  actionLabel: "Send & Logout",
+  color: "warn"
 };
 
-export const Warn = Template.bind({});
-Warn.args = {
-  placeHolder: "placeHolder",
-  actionLabel: "actionLabel",
-  color: "warn"
+export const Username = Template.bind({});
+Username.args = {
+  placeHolder: "Username",
+  actionLabel: "Sign In",
+  color: "primary"
 };
 

@@ -10,9 +10,9 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "visual-test:capture": "rm -rf current && npx storycap http://localhost:6006 -o screenshots/current",
+    "visual-test:capture": "rm -rf screenshots/current && npx storycap http://localhost:6006 -o screenshots/current",
     "visual-test": "npm run visual-test:capture && npm run visual-test:assert",
-    "visual-test:assert": "rm -rf diff && reg-cli screenshots/current screenshots/expected screenshots/diff -R screenshots/report.html -J screenshots/report.json -E",
+    "visual-test:assert": "rm -rf screenshots/diff && reg-cli screenshots/current screenshots/expected screenshots/diff -R screenshots/report.html -J screenshots/report.json -E",
     "visual-test:update": "npm run visual-test:assert -- -U"
   },
   "private": true,

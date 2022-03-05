@@ -20,6 +20,7 @@ import { AuthService } from "src/app/auth/auth.service";
     <app-form
       placeHolder="Username"
       actionLabel="Sign In"
+      color="primary"
       (onSubmit)="onLoggedIn($event)">
     </app-form>
 
