@@ -41,6 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 /screenshots/diff/
-/screenshots/expected/
 /screenshots/report.html
 /screenshots/report.json
+/screenshots/current/

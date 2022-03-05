@@ -6,7 +6,7 @@ import { AuthService } from "src/app/auth/auth.service";
   selector: 'app-loggedout',
   template: `
 
-    <h2>Welcome</h2>
+    <h2>Sign In</h2>
     <br/>
 
     <p>
@@ -17,22 +17,12 @@ import { AuthService } from "src/app/auth/auth.service";
       process starting with atomic components and ending with pages.
     </p>
 
-    <mat-form-field class="example-form-field" appearance="outline">
-      <mat-label>Username</mat-label>
-      <input matInput type="text" [(ngModel)]="username">
-      <button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
+    <app-form
+      placeHolder="Username"
+      actionLabel="Sign In"
+      (onSubmit)="onLoggedIn($event)">
+    </app-form>
 
-
-    <storybook-button
-      size="small"
-      [primary]="true"
-      class="margin-left"
-      (onClick)="onLoggedIn()"
-      label="Log in"
-    ></storybook-button>
 
 
     <p>
@@ -76,20 +66,9 @@ import { AuthService } from "src/app/auth/auth.service";
       Viewports addon in the toolbar
     </div>
   `,
-  styles: [`
-
-    .example-form-field {
-      width: 200px;
-    }
-
-    .margin-left{
-      margin-left: 20px ;
-    }
-
-  `]
+  styles: []
 })
 export class LoggedOutComponent implements OnInit {
-  username: string = "";
 
   constructor(private router: Router, private authService: AuthService) {
   }
@@ -97,8 +76,8 @@ export class LoggedOutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLoggedIn() {
-    this.authService.login({username: this.username})
-    this.router.navigate(['logged-in'])
+  onLoggedIn(username: string) {
+    this.authService.login({username})
+
   }
 }

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from "src/app/auth/auth.service";
 
 @Component({
   selector: 'app-loggedin',
   template: `
-    <h2>loggedin</h2>
+    <h2>We need information, {{username | async}}!</h2>
     <p>
       We recommend building UIs with a
       <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
@@ -12,21 +13,13 @@ import { Component, OnInit } from '@angular/core';
       process starting with atomic components and ending with pages.
     </p>
 
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Number</mat-label>
-      <input type="text"
-             placeholder="Pick one"
-             aria-label="Number"
-             matInput
-             [(ngModel)]="value"
-             [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of options" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-
-    </mat-form-field>
+    <app-form
+      color="warn"
+      actionLabel="Send & Logout"
+      placeHolder="Role"
+      (onSubmit)="onSubmit($event)"
+    >
+    </app-form>
 
 
     <p>
@@ -67,16 +60,21 @@ import { Component, OnInit } from '@angular/core';
       Viewports addon in the toolbar
     </div>
   `,
-  styles: [
-  ]
+  styles: []
 })
 export class LoggedInComponent implements OnInit {
 
-  options = ['options1', 'options2', 'options3']
-  value: any;
-  constructor() { }
+  username = this.authService.username
 
-  ngOnInit(): void {
+  constructor(private authService: AuthService) {
   }
 
+  ngOnInit(): void {
+
+  }
+
+  onSubmit(role: string) {
+    console.log(role)
+    this.authService.logout()
+  }
 }

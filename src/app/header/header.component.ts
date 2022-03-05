@@ -27,17 +27,12 @@ import { AuthService } from "src/app/auth/auth.service";
           <h1>Visual Testing Demo</h1>
         </div>
         <div>
-          <div *ngIf="user">
+          <div *ngIf="username">
           <span class="welcome">
-            Welcome, <b>{{ user.username }}</b
+            Welcome, <b>{{ username }}</b
           >!
           </span>
-            <storybook-button
-              *ngIf="user"
-              size="small"
-              (onClick)="onLogout.emit($event)"
-              label="Log out"
-            ></storybook-button>
+            <button  class="margin-left" mat-stroked-button (click)="onLogout.emit($event)">Log out</button>
           </div>
 
         </div>
@@ -47,7 +42,7 @@ import { AuthService } from "src/app/auth/auth.service";
 })
 export default class HeaderComponent {
   @Input()
-  user: User | null = null;
+  username: string | null = null;
 
   @Output()
   onLogout = new EventEmitter<Event>();

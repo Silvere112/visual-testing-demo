@@ -1,17 +1,14 @@
+import type { Meta, Story } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
-import type { Story, Meta } from '@storybook/angular';
-
-import Button from 'src/app/button/button.component';
 import Header from 'src/app/header/header.component';
+import { MatButtonModule } from "@angular/material/button";
 
 export default {
-  title: 'Example/Header',
   component: Header,
   decorators: [
     moduleMetadata({
-      declarations: [Button],
-      imports: [CommonModule],
+      imports: [CommonModule, MatButtonModule],
     }),
   ],
   parameters: {
@@ -26,9 +23,7 @@ const Template: Story<Header> = (args: Header) => ({
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-  user: {
-    username: 'Jane Doe',
-  },
+  username: 'Jane Doe',
 };
 
 export const LoggedOut = Template.bind({});

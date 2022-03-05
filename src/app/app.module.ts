@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import HeaderComponent from "src/app/header/header.component";
-import ButtonComponent from "src/app/button/button.component";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from "@angular/material/slider";
@@ -15,28 +14,27 @@ import { MatButtonModule } from "@angular/material/button";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { FormComponent } from './form/form.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        ButtonComponent,
-        LoggedInComponent,
-        LoggedOutComponent,
-        HeaderComponent
-    ],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LoggedInComponent,
+    LoggedOutComponent,
+    HeaderComponent,
+    FormComponent
+  ],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule,
     MatInputModule,
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
