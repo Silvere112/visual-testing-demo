@@ -7,6 +7,8 @@ import PageComponent from "src/app/page/page.component";
 import HeaderComponent from "src/app/header/header.component";
 import ButtonComponent from "src/app/button/button.component";
 import { CommonModule } from "@angular/common";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from "@angular/material/slider";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CommonModule } from "@angular/common";
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
