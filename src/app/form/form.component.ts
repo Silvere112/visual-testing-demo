@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     </mat-form-field>
 
 
-    <button  class="margin-left" mat-raised-button [color]="color" (click)="onClick()">{{actionLabel}}</button>
+    <button  class="margin-left" mat-button [color]="color" (click)="onClick()">{{actionLabel}}</button>
 
   `,
   styles: [
