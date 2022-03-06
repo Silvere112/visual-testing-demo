@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     </mat-form-field>
 
 
-    <button  class="margin-left" mat-raised-button [color]="color" (click)="onClick()">{{actionLabel}}</button>
+    <button class="margin-left" mat-button [class.mat-raised-button]="isRaised" [color]="color" (click)="onClick()">{{actionLabel}}</button>
 
   `,
   styles: [
@@ -36,6 +36,9 @@ export class FormComponent {
   @Input()
   color: "primary" | "warn" = "primary"
 
+  @Input()
+  buttonType: "basic" | "raised" = "raised"
+
 
   @Output()
   onSubmit = new EventEmitter<string>()
@@ -45,5 +48,9 @@ export class FormComponent {
 
   onClick() {
     this.onSubmit.next(this._value)
+  }
+
+  get isRaised(){
+    return this.buttonType == "raised"
   }
 }

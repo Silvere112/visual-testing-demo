@@ -13,6 +13,7 @@ import { AuthService } from "src/app/auth/auth.service";
       color="warn"
       actionLabel="Send & Logout"
       placeHolder="Role"
+      buttonType="basic"
       (onSubmit)="onSubmit($event)"
     >
     </app-form>

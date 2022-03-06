@@ -23,13 +23,14 @@ export const Role = Template.bind({});
 Role.args = {
   placeHolder: "Role",
   actionLabel: "Send & Logout",
-  color: "warn"
+  color: "warn",
+  buttonType: "basic"
 };
 
 export const Username = Template.bind({});
 Username.args = {
   placeHolder: "Username",
   actionLabel: "Sign In",
-  color: "primary"
+  color: "primary",
 };
 
