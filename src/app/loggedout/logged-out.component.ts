@@ -9,7 +9,7 @@ import { AuthService } from "src/app/auth/auth.service";
     <h2>Sign in for the Visual Testing Demonstration </h2>
 
     <p>
-      Before attending to the event please do not forget to sign in with the given form
+      Before attending the event please do not forget to sign in with the given form
     </p>
 
     <app-form

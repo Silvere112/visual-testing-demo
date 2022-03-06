@@ -6,7 +6,7 @@ import { AuthService } from "src/app/auth/auth.service";
   template: `
     <h2>We need information, {{username | async}}!</h2>
     <p>
-      Don't logout, we need to know what is your job title for the statistics.
+      Don't logout, we need to know what is your job title for the statistics
     </p>
 
     <app-form
@@ -26,7 +26,7 @@ import { AuthService } from "src/app/auth/auth.service";
     </p>
 
     <div class="tip-wrapper">
-      <span class="tip">Tip</span> You can ask question in the chat
+      <span class="tip">Tip</span> You can ask questions in chat
     </div>
   `,
   styles: []
