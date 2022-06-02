@@ -10,10 +10,12 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "visual-test:capture": "rm -rf screenshots/current && npx storycap http://localhost:6006 -o screenshots/current",
-    "visual-test": "npm run visual-test:capture && npm run visual-test:assert",
-    "visual-test:assert": "rm -rf screenshots/diff && reg-cli screenshots/current screenshots/expected screenshots/diff -R screenshots/report.html -J screenshots/report.json -E",
-    "visual-test:update": "npm run visual-test:assert -- -U"
+    "visual-test:serve": "npm-run-all visual-test:only-capture-and-assert; npm run visual-test:only-report",
+    "visual-test:only-capture-and-assert": "loki test --chromeFlags=\"--headless --no-sandbox --disable-gpu --hide-scrollbars\"",
+    "visual-test:only-approve": "loki approve",
+    "visual-test:only-report": "npm-run-all visual-test:only-report:*",
+    "visual-test:only-report:json": "node .loki/generate-visual-json-report.js",
+    "visual-test:only-report:html": "reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "private": true,
   "dependencies": {
@@ -52,8 +54,9 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "loki": "^0.30.2",
+    "npm-run-all": "^4.1.5",
     "reg-cli": "^0.17.5",
-    "storycap": "^3.1.5",
     "typescript": "~4.5.2"
   }
 }

@@ -21,7 +21,7 @@ const Template: Story<FormComponent> = (args: FormComponent) => ({
 
 export const Role = Template.bind({});
 Role.args = {
-  placeHolder: "Role",
+  placeHolder: "Roe",
   actionLabel: "Send & Logout",
   color: "warn"
 };
