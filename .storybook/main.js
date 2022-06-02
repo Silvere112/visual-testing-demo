@@ -5,6 +5,7 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-essentials",
+    'storybook-addon-designs'
   ],
   "framework": "@storybook/angular",
   "core": {

@@ -20,5 +20,10 @@ export const Example = Template.bind({});
 Example.args = {
   anInput: "test"
 };
-
+Example.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/evRY7WTny6zHsUAB11Dnc5/Visual-testing-mob-programming?node-id=103%3A178',
+  },
+};
 
