@@ -6,7 +6,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [ExampleComponent],
-
+      imports: []
     }),
   ]
 
@@ -27,3 +27,7 @@ Example.parameters = {
   },
 };
 
+export const Example2 = Template.bind({});
+Example2.args = {
+  anInput: "test"
+};
