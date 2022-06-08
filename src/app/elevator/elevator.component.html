@@ -1,1 +1,2 @@
-<img src="/assets/images/elevator/open.png"/>
+<img *ngIf="closed" src="/assets/images/elevator/closed.png"/>
+<img *ngIf="!closed" src="/assets/images/elevator/open.png"/>

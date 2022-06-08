@@ -16,12 +16,24 @@ const Template: Story <ElevatorComponent> = (args: ElevatorComponent) => ({
   props: args,
 });
 
-export const Elevator = Template.bind({});
-Elevator.args = {
+export const OpenElevator = Template.bind({});
+OpenElevator.args = {
+  closed : false
 };
-Elevator.parameters = {
+OpenElevator.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/evRY7WTny6zHsUAB11Dnc5/Visual-testing-mob-programming?node-id=136%3A219',
+  },
+};
+
+export const ClosedElevator = Template.bind({});
+ClosedElevator.args = {
+  closed : true
+};
+ClosedElevator.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/evRY7WTny6zHsUAB11Dnc5/Visual-testing-mob-programming?node-id=140%3A219',
   },
 };
