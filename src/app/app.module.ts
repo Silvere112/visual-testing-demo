@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExampleComponent } from './example/example.component';
 import { DoorComponent } from './door/door.component';
 import { ElevatorComponent } from './elevator/elevator.component';
+import { WallComponent } from './wall/wall.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ElevatorComponent } from './elevator/elevator.component';
     ExampleComponent,
     DoorComponent,
     ElevatorComponent,
+    WallComponent,
   ],
   imports: [
     BrowserModule,
