@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-wall',
   templateUrl: './wall.component.html',
   styleUrls: ['./wall.component.scss']
 })
-export class WallComponent implements OnInit {
+export class WallComponent {
 
-  constructor() { }
+  sizeAsArray = transformNumberToArray(1);
 
-  ngOnInit(): void {
+  @Input()
+  set size(value: number) {
+    this.sizeAsArray = transformNumberToArray(value)
   }
 
+}
+
+
+function transformNumberToArray(value: number) {
+  return [...Array(value).keys()];
 }
