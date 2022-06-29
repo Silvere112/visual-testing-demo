@@ -7,6 +7,7 @@ import { ExampleComponent } from './example/example.component';
 import { DoorComponent } from './door/door.component';
 import { ElevatorComponent } from './elevator/elevator.component';
 import { WallComponent } from './wall/wall.component';
+import { FloorComponent } from './floor/floor.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { WallComponent } from './wall/wall.component';
     DoorComponent,
     ElevatorComponent,
     WallComponent,
+    FloorComponent,
   ],
   imports: [
     BrowserModule,
